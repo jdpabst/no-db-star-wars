@@ -1,0 +1,23 @@
+.main-planets-container{
+    margin: 0 auto;
+    height: auto;
+    width: 56vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.planet-holder {
+    height: 250px;
+    width: 250px;
+    margin-top: 25px;
+    color: white;
+    background-size: cover;
+}
+
+.planet-holder img{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}

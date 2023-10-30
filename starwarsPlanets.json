@@ -1,4 +1,5 @@
-   [{
+[{
+	"id": 1,
 	"name": "Tatooine",
 	"rotation_period": "23",
 	"orbital_period": "304",
@@ -8,8 +9,9 @@
 	"terrain": "desert",
 	"surface_water": "1",
 	"population": "200000",
-	"imgURL" : "./images/Tattoine.png"
+	"url" : "images/Tatooine.png"
    }, {
+	"id": 2,
 	"name": "Alderaan",
 	"rotation_period": "24",
 	"orbital_period": "364",
@@ -19,8 +21,9 @@
 	"terrain": "grasslands, mountains",
 	"surface_water": "40",
 	"population": "2000000000",
-	"imgURL" : "./images/Alderaan.png"
+	"url" : "images/Alderaan.png"
    }, {
+	"id": 3,
 	"name": "Yavin IV",
 	"rotation_period": "24",
 	"orbital_period": "4818",
@@ -30,8 +33,9 @@
 	"terrain": "jungle, rainforests",
 	"surface_water": "8",
 	"population": "1000",
-	"imgURL" : "./images/Yavin IV.png"
+	"url" : "images/Yavin IV.png"
    }, {
+	"id": 4,
 	"name": "Hoth",
 	"rotation_period": "23",
 	"orbital_period": "549",
@@ -41,8 +45,9 @@
 	"terrain": "tundra, ice caves, mountain ranges",
 	"surface_water": "100",
 	"population": "unknown",
-	"imgURL" : "./images/Hoth.png"
+	"url" : "images/Hoth.png"
    }, {
+	"id": 5,
 	"name": "Dagobah",
 	"rotation_period": "23",
 	"orbital_period": "341",
@@ -52,8 +57,9 @@
 	"terrain": "swamp, jungles",
 	"surface_water": "8",
 	"population": "unknown",
-	"imgURL" : "./images/Dagobah.png"
+	"url" : "images/Dagobah.png"
    }, {
+	"id": 6,
 	"name": "Bespin",
 	"rotation_period": "12",
 	"orbital_period": "5110",
@@ -63,5 +69,5 @@
 	"terrain": "gas giant",
 	"surface_water": "0",
 	"population": "6000000",
-	"imgURL" : "./images/Bespin.png"
-   }]
+	"url" : "images/Bespin.png"
+   }]	
