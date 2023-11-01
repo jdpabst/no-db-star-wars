@@ -21,3 +21,63 @@
     height: 200px;
     width: 200px;
 }
+
+.planet-pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    height: 500px;
+    background-image: url(https://images.unsplash.com/photo-1554296048-b59c9fca4857?auto=format&fit=crop&q=80&w=2978&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    padding: 20px;
+    padding-bottom: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index:1000;
+}
+
+.planet-pop-up img{
+    border-radius: 50%;
+    height: 175px;
+    width: 175px;
+    margin: 0 auto;
+}
+
+.planet-pop-up-content{
+    /* border: 1px solid blue; */
+    background-color: lightgray;
+    position: relative;
+    width: 100%;
+    height: 325px;
+}
+
+.planet-name{
+    font-size: 25px;
+    border-bottom: 1px solid white;
+}
+
+.planet-pop-up-content p{
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.bttn-holder{
+    /* border: 1px solid pink; */
+    display: flex;
+    justify-content: space-around;
+    width: 125px;
+    margin: 0 auto;
+}
+
+.planet-pop-up-close-bttn {
+    background-color: white;
+    color: gray;
+    border: none;
+    height: 25px;
+    border-radius: 2px;
+}

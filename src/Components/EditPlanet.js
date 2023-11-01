@@ -20,14 +20,14 @@ function EditPlanet(props){
             surface_water, 
             population, 
             url
-        }, [id, name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population, url])
+        }, [])
     })
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({ ...values, [name]: value }))
     }
-
+//    START HERE, TRYING TO FIGURE OUT HOW TO EDIT THE PLANETS -- THE CONTENT IN THE INPUT BOXES IS NOT CHANGING -- WORK ON THE EDIT PLANET FUNCTION //
     return (
         <div>
             { isOpen && (

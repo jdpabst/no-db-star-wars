@@ -39,11 +39,22 @@ function Planets(props) {
                 ))}
                 {isOpen && selectedPlanet && (
                     <div className="planet-pop-up">
+                        <img src={`http://localhost:3001/${selectedPlanet.url}`} />
                         <div className="planet-pop-up-content">
-                            {/* START STYLING AND GETTING ALL OF THE INFO ON THE POP UP HERE */}
-                            <img src={`http://localhost:3001/${selectedPlanet.url}`} />
-                            <h1>{selectedPlanet.name}</h1>
-                            <button className="planet-pop-up-close-bttn" onClick={ () => closePopUp() }>Close</button>
+                            <h1 className="planet-name">{ selectedPlanet.name }</h1>
+                            <p>Rotation Period: { selectedPlanet.rotation_period }</p>
+                            <p>Orbital Period: { selectedPlanet.orbital_period }</p>
+                            <p>Diameter: { selectedPlanet.diameter }</p>
+                            <p>Climate: { selectedPlanet.climate }</p>
+                            <p>Gravity: { selectedPlanet.gravity }</p>
+                            <p>Terrain: { selectedPlanet.terrain }</p>
+                            <p>Surface Water: { selectedPlanet.surface_water }</p>
+                            <p>Population: { selectedPlanet.population }</p>
+                            <div className="bttn-holder">
+                                <button className="planet-pop-up-close-bttn" onClick={ () => closePopUp() }>Close</button>
+                                <EditPlanet terrain={ selectedPlanet.terrain } surface_water={ selectedPlanet.surface_water } url={ selectedPlanet.url } population={ selectedPlanet.population } climate={ selectedPlanet.climate } gravity={ selectedPlanet.gravity } name={ selectedPlanet.name }rotation_period={ selectedPlanet.rotation_period } orbital_period={ selectedPlanet.orbital_period } diameter={ selectedPlanet.diameter }/>
+                            </div>
+                            
                         </div>
                     </div>
                 )}
