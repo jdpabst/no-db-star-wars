@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './EditPlanet.css';
 
 function EditPlanet(props){
-    const {id, name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population, url } = props;
-    const { editPlanet } = props;
+    const { selectedPlanet, id, name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population, url } = props;
+    const { editPlanet, setSelectedPlanet } = props;
     const [ isOpen, setIsOpen ] = useState(false);
     const [ inputs, setInputs ] = useState({});
 
@@ -20,8 +20,9 @@ function EditPlanet(props){
             surface_water, 
             population, 
             url
-        }, [])
-    })
+        })
+    }, [])
+    
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -44,7 +45,7 @@ function EditPlanet(props){
                         <label> Enter Rotation Period:
                             <input
                                 type='text'
-                                name='rotation period'
+                                name='rotation_period'
                                 value={inputs.rotation_period}
                                 onChange={handleChange}
                             />
@@ -52,7 +53,7 @@ function EditPlanet(props){
                         <label> Enter Orbital Period:
                             <input
                                 type='text'
-                                name='orbital period'
+                                name='orbital_period'
                                 value={inputs.orbital_period}
                                 onChange={handleChange}
                             />
@@ -92,7 +93,7 @@ function EditPlanet(props){
                         <label> Enter Surface Water:
                             <input
                                 type='text'
-                                name='surface water'
+                                name='surface_water'
                                 value={inputs.surface_water}
                                 onChange={handleChange}
                             />
@@ -115,7 +116,7 @@ function EditPlanet(props){
                         </label>
                     </form>
                     <button className='cancel-edit edit-button' onClick={() => setIsOpen(false)}>Cancel</button>
-                    <button className='save-edit edit-button' onClick={() => {setIsOpen(false); editPlanet(inputs.name, inputs.rotation_period, inputs.orbital_period, inputs.diameter, inputs.climate, inputs.gravity, inputs.terrain, inputs.surface_water, inputs.population, inputs.url)}}>Save</button>
+                    <button className='save-edit edit-button' onClick={() => {setIsOpen(false); editPlanet(inputs.name, inputs.rotation_period, inputs.orbital_period, inputs.diameter, inputs.climate, inputs.gravity, inputs.terrain, inputs.surface_water, inputs.population, inputs.url); setSelectedPlanet(inputs) }}>Save</button>
                 </div>
             )}
             <button className="planet-edit-bttn" onClick={ () => setIsOpen(true)}>Edit</button>

@@ -30,6 +30,31 @@ function Planets(props) {
         setIsOpen(false);
     }
 
+    function editPlanet(name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population, url){
+        const updatedPlanet = planets.map(planet => {
+            if(planet.id === selectedPlanet.id){
+                const updatedPlanet = {
+                    ...planet, 
+                    name: name,
+                    rotation_period: rotation_period,
+                    orbital_period: orbital_period,
+                    diameter: diameter,
+                    climate: climate,
+                    gravity: gravity,
+                    terrain: terrain,
+                    surface_water: surface_water,
+                    population: population,
+                    url: url
+                };
+                setSelectedPlanet(updatedPlanet);
+                return updatedPlanet
+            } else {
+                return planet;
+            }
+        })
+        setPlanets(updatedPlanet);
+    }
+
     return (
         <div className="main-planets-container">
                 {planets.map((item) => (
@@ -52,7 +77,20 @@ function Planets(props) {
                             <p>Population: { selectedPlanet.population }</p>
                             <div className="bttn-holder">
                                 <button className="planet-pop-up-close-bttn" onClick={ () => closePopUp() }>Close</button>
-                                <EditPlanet terrain={ selectedPlanet.terrain } surface_water={ selectedPlanet.surface_water } url={ selectedPlanet.url } population={ selectedPlanet.population } climate={ selectedPlanet.climate } gravity={ selectedPlanet.gravity } name={ selectedPlanet.name }rotation_period={ selectedPlanet.rotation_period } orbital_period={ selectedPlanet.orbital_period } diameter={ selectedPlanet.diameter }/>
+                                <EditPlanet 
+                                    editPlanet={ editPlanet } 
+                                    terrain={ selectedPlanet.terrain } 
+                                    surface_water={ selectedPlanet.surface_water } 
+                                    url={ selectedPlanet.url } population={ selectedPlanet.population } 
+                                    climate={ selectedPlanet.climate } 
+                                    gravity={ selectedPlanet.gravity } 
+                                    name={ selectedPlanet.name }
+                                    rotation_period={ selectedPlanet.rotation_period } 
+                                    orbital_period={ selectedPlanet.orbital_period } 
+                                    diameter={ selectedPlanet.diameter }
+                                    selectedPlanet={ selectedPlanet }
+                                    setSelectedPlanet={ setSelectedPlanet }
+                                    />
                             </div>
                             
                         </div>
