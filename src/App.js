@@ -1,6 +1,5 @@
 import Header from './Components/Header.js';
 import Planets from './Components/Planets.js';
-import EditPlanet from './Components/EditPlanet.js';
 import './App.css';
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
     <div className="App">
       <Header />
       <Planets />
-      {/* <EditPlanet /> */}
     </div>
   );
 }

@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EditPlanet from './EditPlanet.js';
+import DeletePlanet from './DeletePlanet.js';
+import NewPlanet from './NewPlanet.js';
+import { randomString } from '../helpers.js';
 import './Planets.css';
 
 function Planets(props) {
     const [planets, setPlanets] = useState([]);
     const [selectedPlanet, setSelectedPlanet] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(()=>{
         getPlanets();
@@ -55,13 +59,46 @@ function Planets(props) {
         setPlanets(updatedPlanet);
     }
 
+    function deletePlanet(id) {
+        const currentIndex = planets.findIndex((planet) => planet.id === id);
+        if (currentIndex !== -1) {
+          const updatedPlanets = planets.filter((planet) => planet.id !== id);
+          const newCurrentIndex =
+            currentIndex >= updatedPlanets.length ? updatedPlanets.length - 1 : currentIndex;
+      
+          setPlanets(updatedPlanets);
+          setCurrentIndex(newCurrentIndex);
+        }
+      }
+
+    function addPlanet(name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population, url){
+        setPlanets([...planets, {
+            id: randomString(16), 
+            name: name, 
+            rotation_period: 
+            rotation_period, 
+            orbital_period:orbital_period,
+            diameter: diameter,
+            climate: climate,
+            gravity: gravity,
+            terrain: terrain,
+            surface_water: surface_water,
+            population: population,
+            url: url
+        }])
+    }
+
     return (
-        <div className="main-planets-container">
-                {planets.map((item) => (
-                    <div className="planet-holder" key={ item.id } onClick={() => handlePlanetClick(item)}>
-                        <img src={`http://localhost:3001/${item.url}`} alt={item.name} />
-                    </div>
-                ))}
+        <div className="planets-create-planet-bttn-container">
+            <div className="main-planets-container">
+                {planets.map((item) => {
+                    console.log(item.id);
+                    return (
+                        <div className="planet-holder" key={ item.id } onClick={() => handlePlanetClick(item)}>
+                            <img src={`http://localhost:3001/${item.url}`} alt={item.name} />
+                        </div>
+                    )
+                })}
                 {isOpen && selectedPlanet && (
                     <div className="planet-pop-up">
                         <img src={`http://localhost:3001/${selectedPlanet.url}`} />
@@ -91,11 +128,14 @@ function Planets(props) {
                                     selectedPlanet={ selectedPlanet }
                                     setSelectedPlanet={ setSelectedPlanet }
                                     />
+                                <DeletePlanet deletePlanet={ deletePlanet } selectedPlanet={ selectedPlanet } closePopUp={ closePopUp }/>
                             </div>
                             
                         </div>
                     </div>
                 )}
+        </div>
+                <NewPlanet addPlanet={ addPlanet }/>
         </div>
     )
 }

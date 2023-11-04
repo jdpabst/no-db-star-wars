@@ -1,11 +1,12 @@
 .main-planets-container{
     margin: 0 auto;
+    padding-left: 45px;
     height: auto;
-    width: 56vw;
+    width: 90vw;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    align-content: flex-start;
 }
 
 .planet-holder {
@@ -20,6 +21,7 @@
     border-radius: 50%;
     height: 200px;
     width: 200px;
+    background-size: cover;
 }
 
 .planet-pop-up {
@@ -67,10 +69,9 @@
 }
 
 .bttn-holder{
-    /* border: 1px solid pink; */
     display: flex;
     justify-content: space-around;
-    width: 125px;
+    width: 200px;
     margin: 0 auto;
 }
 

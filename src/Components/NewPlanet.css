@@ -1,0 +1,22 @@
+.new-planet-bttn-container {
+    margin: 0 auto;
+}
+
+.new-planet-popup{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 900px;
+    height: 600px;
+    background-image: url(https://images.unsplash.com/photo-1554296048-b59c9fca4857?auto=format&fit=crop&q=80&w=2978&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    padding: 20px;
+    padding-bottom: 35px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index:1002;
+}
+
+.new-planet-bttn{
+    margin-top: 2px;
+}
